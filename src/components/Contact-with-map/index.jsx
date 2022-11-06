@@ -161,7 +161,7 @@ const ContactWithMap = ({ theme = "dark" }) => {
                 </Split>
                 <div className="item mb-40">
                   <h5>
-                    <a href="#0">crackedvisuals@gmail.com</a>
+                    <a href="#0">crackedvisualz@gmail.com</a>
                   </h5>
                   <h5>240-475-8109</h5>
                 </div>

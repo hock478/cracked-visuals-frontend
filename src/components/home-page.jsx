@@ -48,7 +48,7 @@ const Homepage1 = () => {
   return (
     <DarkTheme>
       <Navbar nr={navbarRef} lr={logoRef} />
-      <IntroTxt  contactName="Cracked Visuals"/>
+      <IntroTxt  contactName="CrackedVisualz"/>
 
       {/* <IntroWithSlider1 sliderRef={fixedSlider} /> */}
       <div ref={MainContent} className="main-content">
