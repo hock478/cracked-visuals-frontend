@@ -198,6 +198,10 @@ a, span {
 .section-padding {
   padding: 120px 0; }
 
+  .black-dark {
+    background-color: black;
+  }
+
 .section-ptb {
   padding: 80px 0; }
 

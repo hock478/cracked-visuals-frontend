@@ -49,7 +49,7 @@ const ContactWithMap = ({ theme = "dark" }) => {
   const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
   return (
     <>
-      <section className="contact section-padding">
+      <section className="contact section-padding black-dark">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">

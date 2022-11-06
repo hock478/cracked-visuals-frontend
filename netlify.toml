@@ -1,0 +1,5 @@
+[[redirects]]
+from = "https://crackedvisuals.com/*"
+to = "https://www.crackedvisualz.com/:splat"
+status = 301
+force = true
