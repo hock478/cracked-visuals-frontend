@@ -13,14 +13,14 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta
+          {/* <meta
             name="keywords"
             content="HTML5 Template Avo onepage themeforest"
           />
           <meta
             name="description"
             content="Avo - Onepage Multi-Purpose HTML5 Template"
-          />
+          /> */}
           <meta name="author" content="" />
           <link rel="shortcut icon" href="../common/IMG_2911.jpg" />
           {/* Google Fonts */}

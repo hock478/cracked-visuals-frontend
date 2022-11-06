@@ -135,10 +135,10 @@ const IntroWithSlider1 = ({ sliderRef }) => {
         ></div>
 
         <div className="social-icon">
-          <a href="https://www.instagram.com/crackedvisualz/">
+          <a href="https://www.instagram.com/crackedvisualz/"  target="_blank">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/channel/UCTUsx4sMXnMnPyfoXXZVdew">
+          <a href="https://www.youtube.com/channel/UCTUsx4sMXnMnPyfoXXZVdew" target="_blank">
             <i className="fab fa-youtube"></i>
           </a>
         </div>

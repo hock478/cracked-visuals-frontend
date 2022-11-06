@@ -16,10 +16,10 @@ const IntroTxt = ({subBG, contactName}) => {
               {/* <h6>Cracked Visuals</h6> */}
               {contactName?.includes("Cracked") ? <h4>Photography &amp; Videography Services</h4>: ""}
               <div className="social-icon">
-                <a href="https://www.instagram.com/crackedvisualz/" className="icon">
+                <a href="https://www.instagram.com/crackedvisualz/"  target="_blank" className="icon">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.youtube.com/channel/UCTUsx4sMXnMnPyfoXXZVdew" className="icon">
+                <a href="https://www.youtube.com/channel/UCTUsx4sMXnMnPyfoXXZVdew" target="_blank" className="icon">
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
