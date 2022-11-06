@@ -1,0 +1,14 @@
+[
+  {
+    "id": 2,
+    "title": {
+      "first": "Videography"
+    },
+    "image": "/img/slid/03.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Photography",
+    "image": "/img/slid/02.jpg"
+  }
+]
