@@ -44,17 +44,17 @@ const Navbar = ({ lr, nr, theme }) => {
                 <a className="nav-link">Home</a>
               </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
               <Link href="/portfolio">
                 <a className="nav-link">Portfolio</a>
               </Link>
-            </li>
+            </li> */}
             {/* <li className="nav-item">
               <Link href="/about">
                 <a className="nav-link">About</a>
               </Link>
             </li> */}
-            {/* <li className="nav-item dropdown" onClick={handleDropdown}>
+            <li className="nav-item dropdown" onClick={handleDropdown}>
               <span
                 className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
@@ -65,20 +65,20 @@ const Navbar = ({ lr, nr, theme }) => {
                 portfolio
               </span>
               <div className="dropdown-menu">
-                <Link href="/works/works-dark">
-                  <a className="dropdown-item">Mouse Info</a>
+                <Link href="/portfolio/videography">
+                  <a className="dropdown-item">Videography</a>
                 </Link>
-                <Link href="/works2/works2-dark">
-                  <a className="dropdown-item">Masonry 3 Columns</a>
+                <Link href="/portfolio/photography">
+                  <a className="dropdown-item">Photography</a>
                 </Link>
-                <Link href="/works3/works3-dark">
+                {/* <Link href="/works3/works3-dark">
                   <a className="dropdown-item">Masonry 2 Columns</a>
                 </Link>
                 <Link href="/works4/works4-dark">
                   <a className="dropdown-item">Pinterest List</a>
-                </Link>
+                </Link> */}
               </div>
-            </li> */}
+            </li>
             <li className="nav-item">
               <Link href="/contact">
                 <a className="nav-link">Contact</a>

@@ -151,7 +151,7 @@ const ContactWithMap = ({ theme = "dark" }) => {
                 </Formik>
               </div>
             </div>
-            <div className="col-lg-5 offset-lg-1">
+            {/* <div className="col-lg-5 offset-lg-1">
               <div className="cont-info">
                 <h4 className="extra-title mb-50">Contact Info.</h4>
                 <Split>
@@ -161,8 +161,8 @@ const ContactWithMap = ({ theme = "dark" }) => {
                 </Split>
                 <div className="item mb-40">
                   <h5>crackedvisualz@gmail.com</h5>
-                  <h5><a href="tel:2404758107">+1 (240) 475-8107</a></h5>
-                  {/* <h5>240-475-8107</h5> */}
+                  <h5><a href="tel:2404758107">+</a></h5>
+                  <h5>240-475-8107</h5>
                 </div>
                 
                 <div className="social mt-50">
@@ -175,7 +175,7 @@ const ContactWithMap = ({ theme = "dark" }) => {
                 
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
