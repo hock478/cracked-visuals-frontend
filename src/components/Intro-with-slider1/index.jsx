@@ -93,7 +93,7 @@ const IntroWithSlider1 = ({ sliderRef }) => {
                       <div className="col-lg-7 col-md-9">
                         <div className="caption center">
                           <Split>
-                            <h1 className="words chars splitting">
+                            <a href={"/portfolio/#photography" + slide.title.toLowerCase()}><h1 className="words chars splitting">
                               {typeof slide.title === "object" ? (
                                 <>
                                   {slide.title.first} <br />
@@ -102,7 +102,7 @@ const IntroWithSlider1 = ({ sliderRef }) => {
                               ) : (
                                 slide.title
                               )}
-                            </h1>
+                            </h1></a>
                           </Split>
                           {slide?.content && <p>{slide.content}</p>}
       

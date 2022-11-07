@@ -6,6 +6,7 @@ import IntroTxt from "../components/Intro-txt";
 import IntroTxt2 from "../components/Intro-txt2";
 import IntroWithSlider1 from "../components/Intro-with-slider1";
 import Navbar from "../components/Navbar";
+import ProjectDetailsHeader from "../components/Project-details-header";
 import ProjectDetailsVideo from "../components/Project-details-video";
 import VideoWithTestimonials from "../components/Video-with-testimonials";
 import Works1Slider from "../components/Works1-slider";
@@ -47,10 +48,15 @@ const Portfolio = () => {
        
        <Navbar nr={navbarRef} lr={logoRef} /> 
   
-        <IntroWithSlider1 sliderRef={fixedSlider} />
+        {/* <IntroWithSlider1 sliderRef={fixedSlider} /> */}
 
        <div ref={MainContent} className="main-content">
+       <ProjectDetailsHeader subtitle="Photography"/>
+
+
           <Works1Slider />
+
+          <ProjectDetailsHeader subtitle="Videography"/>
 
           <ProjectDetailsVideo
           videoBackground="/img/portfolio/project2/bg.jpg"
@@ -74,7 +80,8 @@ const Portfolio = () => {
           videoType="https://www.youtube.com/watch?v=9HHXTsm5_R0"
           videoId="9HHXTsm5_R0"
         />
-          <CallToAction subBG />
+               <CallToAction subBG />
+
         </div>
       </DarkTheme>
     );

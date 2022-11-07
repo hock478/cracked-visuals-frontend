@@ -35,15 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/contact.js"
     ],
-    "/portfolio/photography": [
+    "/portfolio": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/portfolio/photography.js"
-    ],
-    "/portfolio/videography": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/portfolio/videography.js"
+      "static/chunks/pages/portfolio.js"
     ]
   },
   "ampFirstPages": []

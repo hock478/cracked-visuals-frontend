@@ -1434,6 +1434,10 @@ a, span {
   -ms-transform: translateY(80px);
   transform: translateY(80px); }
 
+.test-now {
+  padding-top: 80px;
+  margin-top: -80px;
+}
 .topnav {
   position: fixed;
   top: 0;
@@ -2321,7 +2325,7 @@ header.simpl {
       font-size: 10px; }
 
 .page-header .cont {
-  padding: 220px 0 50px; }
+  padding: 60px 0 10px; }
   .page-header .cont h6 {
     color: #ccc;
     font-weight: 400;

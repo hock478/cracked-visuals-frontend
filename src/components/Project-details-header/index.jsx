@@ -1,14 +1,16 @@
 import React from 'react'
 
-const ProjectDetailsHeader = ({ title , subtitle}) => {
+const ProjectDetailsHeader = ({ title, subtitle}) => {
     return (
       <section className="page-header proj-det">
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-md-9">
               <div className="cont">
-                <h6>{title}</h6>
-                <h2>{subtitle}</h2>
+              <h6 class="test-now"id={title?.toLowerCase()}></h6>
+              <br></br>
+              <h6 >{title}</h6>
+              <h2 class="test-now" id={subtitle?.toLowerCase()}>{subtitle}</h2>
               </div>
             </div>
           </div>

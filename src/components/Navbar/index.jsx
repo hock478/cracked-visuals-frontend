@@ -65,10 +65,10 @@ const Navbar = ({ lr, nr, theme }) => {
                 portfolio
               </span>
               <div className="dropdown-menu">
-                <Link href="/portfolio/videography">
+                <Link href="/portfolio/#videography">
                   <a className="dropdown-item">Videography</a>
                 </Link>
-                <Link href="/portfolio/photography">
+                <Link href="/portfolio/#photography">
                   <a className="dropdown-item">Photography</a>
                 </Link>
                 {/* <Link href="/works3/works3-dark">
