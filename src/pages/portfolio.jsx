@@ -80,6 +80,12 @@ const Portfolio = () => {
           videoType="https://www.youtube.com/watch?v=9HHXTsm5_R0"
           videoId="9HHXTsm5_R0"
         />
+        <ProjectDetailsVideo 
+          videoBackground="/img/portfolio/project2/bg5.jpg"
+          videoType="https://www.youtube.com/watch?v=sAqkmWH5pH8"
+          videoId="sAqkmWH5pH8"
+
+        />
                <CallToAction subBG />
 
         </div>
