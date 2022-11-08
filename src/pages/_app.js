@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Cracked Visuals</title>
+        <title>CrackedVisualz</title>
         <link rel="shortcut icon" href="../../public/img/slid/freelancer.jpg" />
       </Head>
       <Cursor />
