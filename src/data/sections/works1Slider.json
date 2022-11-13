@@ -66,6 +66,13 @@
     "id": 7,
     "title": "",
     "secTex": "",
+    "image": "/img/portfolio/metro/16.jpg",
+    "slug": "/project-details2/project-details2-dark"
+  },
+  {
+    "id": 7,
+    "title": "",
+    "secTex": "",
     "image": "/img/portfolio/metro/11.jpg",
     "slug": "/project-details2/project-details2-dark"
   },
@@ -74,6 +81,13 @@
     "title": "",
     "secTex": "",
     "image": "/img/portfolio/metro/12.jpg",
+    "slug": "/project-details2/project-details2-dark"
+  },
+  {
+    "id": 7,
+    "title": "",
+    "secTex": "",
+    "image": "/img/portfolio/metro/15.jpg",
     "slug": "/project-details2/project-details2-dark"
   }
 ]
