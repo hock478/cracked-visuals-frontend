@@ -14,7 +14,7 @@ const ContactWithMap = ({ theme = "dark" }) => {
 
 
   function submitContactMessage() {
-    fetch("https://master.d1kxxik5h9n2m7.amplifyapp.com/messages", {
+    fetch("https://0qm5cxjdm4.execute-api.us-east-1.amazonaws.com/dev/messages", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
