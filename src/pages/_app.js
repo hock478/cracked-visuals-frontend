@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>CrackedVisualz</title>
-        <link rel="shortcut icon" href="../../public/img/slid/freelancer.jpg" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
       </Head>
       <Cursor />
       <LoadingScreen />

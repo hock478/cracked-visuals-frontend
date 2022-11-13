@@ -25,7 +25,7 @@ const Works2Slider = ({ subBG }) => {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="/css/ionicons.min.css" />
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
       </Head>
       <section
         className={`work-carousel section-padding caroul ${

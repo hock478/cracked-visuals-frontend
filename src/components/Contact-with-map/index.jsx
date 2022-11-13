@@ -12,17 +12,23 @@ const ContactWithMap = ({ theme = "dark" }) => {
   const [message, setMessage] = useState("")
   const [phone, setPhone] = useState("")
 
-
   function submitContactMessage() {
+    const obj = { name, email, phone, message}
+    if(Object.values(obj).includes("")){
+      return;
+    }
+
     fetch("https://0qm5cxjdm4.execute-api.us-east-1.amazonaws.com/dev/messages", {
       method: "POST",
       headers: {
-        "Content-type": "application/json"
+        "Content-type": "application/json",
+        "Accept": "application/json"
       },
       body: JSON.stringify({
         name, email, message, phone
       })
     }).then((data) => {
+      console.log("hi")
       resetForm()
     })
   }
@@ -34,19 +40,7 @@ const ContactWithMap = ({ theme = "dark" }) => {
     setMessage("")
 
   }
-
-
-  const messageRef = React.useRef(null);
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = "Invalid email address";
-    }
-    return error;
-  }
-  const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
+  // const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
   return (
     <>
       <section className="contact section-padding black-dark">
@@ -55,6 +49,9 @@ const ContactWithMap = ({ theme = "dark" }) => {
             <div className="col-lg-6">
               <div className="form md-mb50">
                 <h4 className="extra-title mb-50">Contact Us</h4>
+                <span>* All fields required</span>
+                <br></br>
+                &nbsp;
 
                 <Formik
                   initialValues={{
@@ -63,35 +60,10 @@ const ContactWithMap = ({ theme = "dark" }) => {
                     message: "",
                     phone: ""
                   }}
-                  onSubmit={async (values) => {
-                    await sendMessage(500);
-                    // alert(JSON.stringify(values, null, 2));
-                    // show message
-                    const formData = new FormData();
-
-                    formData.append('name', values.name);
-                    formData.append('email', values.email);
-                    formData.append('message', values.message);
-
-                    const res = await axios.post('/contact.php', formData);
-
-                    if (!res) return;
-
-                    messageRef.current.innerText =
-                      "Your Message has been successfully sent. I will contact you soon.";
-                    // Reset the values
-                    values.name = "";
-                    values.email = "";
-                    values.message = "";
-                    // clear message
-                    setTimeout(() => {
-                      messageRef.current.innerText = "";
-                    }, 2000);
-                  }}
                 >
-                  {({ errors, touched }) => (
+                  {({ touched }) => (
                     <Form id="contact-form">
-                      <div className="messages" ref={messageRef}></div>
+                      <div className="messages"></div>
                       <div className="controls">
                         <div className="form-group">
                           <Field
@@ -101,7 +73,6 @@ const ContactWithMap = ({ theme = "dark" }) => {
                             placeholder="Name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            required="required"
                           />
                         </div>
                         <div className="form-group">
@@ -112,21 +83,20 @@ const ContactWithMap = ({ theme = "dark" }) => {
                             guide={false}
                             value={phone}
                             id="my-input-id"
+                            required="required"
                             onChange={(e) => setPhone(e.target.value)}
                           />
+                         
                           <Field
-                            validate={validateEmail}
                             id="form_email"
                             type="email"
                             name="email"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            required="required"
+                           
                           />
-                          {errors.email && touched.email && (
-                            <div>{errors.email}</div>
-                          )}
+                          
                         </div>
                         <div className="form-group">
                           <Field
@@ -141,10 +111,10 @@ const ContactWithMap = ({ theme = "dark" }) => {
                           />
                         </div>
                         <Link href="/">
-                          <button type="submit" onClick={submitContactMessage} className={`btn-curve ${theme === 'dark' ? 'btn-lit' : 'btn-color'} disabled`}>
+                          <button type="button" onClick={submitContactMessage} className={`btn-curve ${theme === 'dark' ? 'btn-lit' : 'btn-color'} `}>
                             <span>Send Message</span>
                           </button>
-                          </Link>
+                        </Link>
                       </div>
                     </Form>
                   )}
