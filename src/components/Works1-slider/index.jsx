@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import works1SliderData from "../../data/sections/works1Slider.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper core and required modules
@@ -10,6 +10,36 @@ import "swiper/css/navigation";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works1Slider = () => {
+
+  const [styling, setStyling] = useState(false)
+
+  useEffect(() => {
+    const hasTouchScreen = false;
+
+    if ("maxTouchPoints" in navigator) {
+      hasTouchScreen = navigator.maxTouchPoints > 0;
+    } else if ("msMaxTouchPoints" in navigator) {
+      hasTouchScreen = navigator.msMaxTouchPoints > 0;
+    } else {
+      var mQ = window.matchMedia && matchMedia("(pointer:coarse)");
+      if (mQ && mQ.media === "(pointer:coarse)") {
+        hasTouchScreen = !!mQ.matches;
+      } else if ('orientation' in window) {
+        hasTouchScreen = true; // deprecated, but good fallback
+      } else {
+        // Only as a last resort, fall back to user agent sniffing
+        var UA = navigator.userAgent;
+        hasTouchScreen = (
+          /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+          /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA)
+        );
+      }
+    }
+
+    if (hasTouchScreen) {
+      setStyling(hasTouchScreen)
+    }
+  })
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
   return (
@@ -75,6 +105,7 @@ const Works1Slider = () => {
                         className="item-img bg-img wow imago"
                         style={{
                           backgroundImage: `url(${slide.image})`,
+                          backgroundSize: `${styling ? "contain" : "cover"}`
                         }}
                       ></div>
                       <div className="cont">
