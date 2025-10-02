@@ -7,14 +7,23 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useDriveSlides } from "../../data/drive-integration/drive-photos";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works1Slider = () => {
 
   const [styling, setStyling] = useState(false)
+  const { slides, loading, error } = useDriveSlides(); // auto-refresh every 60s
+  const data = slides;
+  
+  console.log(data, 'testing')// fallback
+
+  if (error) {
+    console.warn(error);
+  }
 
   useEffect(() => {
-    const hasTouchScreen = false;
+    let hasTouchScreen = false;
 
     if ("maxTouchPoints" in navigator) {
       hasTouchScreen = navigator.maxTouchPoints > 0;
@@ -36,12 +45,13 @@ const Works1Slider = () => {
       }
     }
 
-    if (hasTouchScreen) {
+    
       setStyling(hasTouchScreen)
-    }
-  })
+    
+  },[])
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
+  const swiperKey = slides.map(s => s.id).join('|') || 'empty';
   return (
     <section className="work-carousel section-padding pt-0 metro position-re">
       <div className="container ontop">
@@ -49,6 +59,7 @@ const Works1Slider = () => {
           <div className="col-lg-12 no-padding">
             <div className="swiper-container">
               <Swiper
+              key={swiperKey}
                 className="swiper-wrapper"
                 slidesPerView={2}
                 centeredSlides={true}
@@ -95,7 +106,7 @@ const Works1Slider = () => {
                   },
                 }}
               >
-                {works1SliderData.map((slide) => (
+                {data.map((slide) => (
                   <SwiperSlide key={slide.id} className="swiper-slide">
                     <div
                       className="content wow noraidus fadeInUp"
