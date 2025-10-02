@@ -16,11 +16,7 @@ const Works1Slider = () => {
   const { slides, loading, error } = useDriveSlides(); // auto-refresh every 60s
   const data = slides;
   
-  console.log(data, 'testing')// fallback
 
-  if (error) {
-    console.warn(error);
-  }
 
   useEffect(() => {
     let hasTouchScreen = false;
@@ -52,6 +48,14 @@ const Works1Slider = () => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
   const swiperKey = slides.map(s => s.id).join('|') || 'empty';
+
+    if (error) {
+    console.warn(error);
+  }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section className="work-carousel section-padding pt-0 metro position-re">
       <div className="container ontop">
@@ -64,6 +68,9 @@ const Works1Slider = () => {
                 slidesPerView={2}
                 centeredSlides={true}
                 loop={true}
+                observer={true}
+  observeParents={true}
+  observeSlideChildren={true}
                 navigation={{
                   prevEl: navigationPrevRef.current,
                   nextEl: navigationNextRef.current,
