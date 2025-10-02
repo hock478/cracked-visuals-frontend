@@ -40,11 +40,9 @@ export function useDriveSlides(pollMs = null) {
         const items = Array.isArray(data.items) ? data.items : [];
         const sig = items.map(i => `${i.id}:${i.modifiedTime || ""}`).join("|");
 
-        console.log(items)
         if (alive && sig !== signatureRef.current) {
           signatureRef.current = sig;
           const conSlides = toSlides(items);
-          console.log(conSlides)
           setSlides(conSlides);
         }
       } catch (e) {
