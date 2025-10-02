@@ -4,13 +4,16 @@ const DEFAULT_SLUG = "/project-details2/project-details2-dark";
 
 
 export function toSlides(items = []) {
-  return items.map((f, i) => ({
-    id: f.id || i,
-    title: "",
-    secTex: "",
-    image: f.url,     // or f.thumb for smaller images
-    slug: DEFAULT_SLUG,
-  }));
+  return items
+    .map((f, i) => ({
+      id: f.id || i,
+      title: "",
+      name: f.name || "",
+      secTex: "",
+      image: f.url,
+      slug: DEFAULT_SLUG,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
 }
 
 export function useDriveSlides(pollMs = null) {
@@ -39,7 +42,8 @@ export function useDriveSlides(pollMs = null) {
 
         if (alive && sig !== signatureRef.current) {
           signatureRef.current = sig;
-          setSlides(toSlides(items));
+          const conSlides = toSlides(items);
+          setSlides(conSlides);
         }
       } catch (e) {
         if (alive && e.name !== "AbortError") {
